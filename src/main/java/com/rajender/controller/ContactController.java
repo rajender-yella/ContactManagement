@@ -1,4 +1,4 @@
-package com.ragender.controller;
+package com.rajender.controller;
 
 import com.rajender.model.Contact;
 import com.rajender.service.ContactService;
