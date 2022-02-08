@@ -34,7 +34,7 @@ public class ContactService
 		}
 
 		
-		public boolean deleteUserById(Long id) {
+		public boolean deleteContactById(Long id) {
 			try {
 				repository.deleteById(id);
 				return true;
