@@ -3,10 +3,16 @@ package com.rajender.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.rajender.model.Contact;
 import com.rajender.repository.ContactRepository;
 
+@Service
+@Transactional
 public class ContactService 
 {
 	@Autowired
@@ -18,7 +24,7 @@ public class ContactService
 			return list;
 		}
 
-		public Contact getContactById(Long id) {
+		public Contact getContactById(Integer id) {
 			Contact contact = repository.findById(id).get();
 			return contact;
 		}
@@ -34,7 +40,7 @@ public class ContactService
 		}
 
 		
-		public boolean deleteContactById(Long id) {
+		public boolean deleteContactById(Integer id) {
 			try {
 				repository.deleteById(id);
 				return true;

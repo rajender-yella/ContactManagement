@@ -69,7 +69,7 @@ public class ContactController {
 			return mv;
 		}
 		@RequestMapping(value = "/editContact/{id}", method = RequestMethod.GET)
-		public ModelAndView displayEditContactForm(@PathVariable Long id) {
+		public ModelAndView displayEditContactForm(@PathVariable Integer id) {
 			ModelAndView mv = new ModelAndView("/editContact");
 			Contact contact = contactService.getContactById(id);
 			mv.addObject("headerMessage", "Edit Contact Details");
@@ -93,7 +93,7 @@ public class ContactController {
 			return mv;
 		}
 		@RequestMapping(value = "/deleteContact/{id}", method = RequestMethod.GET)
-		public ModelAndView deleteContactById(@PathVariable Long id) {
+		public ModelAndView deleteContactById(@PathVariable Integer id) {
 			boolean isDeleted = contactService.deleteContactById(id);
 			System.out.println("User deletion respone: " + isDeleted);
 			ModelAndView mv = new ModelAndView("redirect:/home");
